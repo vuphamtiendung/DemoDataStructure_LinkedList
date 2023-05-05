@@ -10,7 +10,8 @@ namespace LinkedList
     {
         public Node<T> Header { get; set; } = new Node<T>(); // 
         /// <summary>
-        /// TODO: Find data at node in the next node
+        /// Find data at node in the next node
+        /// Find node has value follow require
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
@@ -21,7 +22,11 @@ namespace LinkedList
             if (currentNode != Header) return currentNode;
             return null;
         }
-
+        /// <summary>
+        /// FindPrevious find node in front of the node has value corresponding
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public Node<T> FindPrevious(T data)
         {
             var currentNode = Header;
@@ -30,6 +35,12 @@ namespace LinkedList
             return null;
         }
 
+        /// <summary>
+        /// Insert a node behind node difference with two overloading
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="afterValue"></param>
+        /// <returns></returns>
         public Node<T> Insert(T data, T afterValue)
         {
             var newNode = new Node<T>(data); // create new node
@@ -53,6 +64,11 @@ namespace LinkedList
             return newNode;
         }
 
+        /// <summary>
+        /// Add more an node at the end of the linkedlist
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public Node<T> Add(T data)
         {
             var currentNode = Header;
@@ -65,6 +81,10 @@ namespace LinkedList
             return newNode;
         }
 
+        /// <summary>
+        /// Remove a node of the linkedlist
+        /// </summary>
+        /// <param name="data"></param>
         public void Remove(T data)
         {
             var previousNode = FindPrevious(data);
@@ -72,6 +92,10 @@ namespace LinkedList
 
         }
 
+        /// <summary>
+        /// Traverse linkedlist and act implement anytrhing on once element
+        /// </summary>
+        /// <param name="action"></param>
         public void Traverse(Action<T> action)
         {
             var currentNode = Header;
